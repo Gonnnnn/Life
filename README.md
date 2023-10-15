@@ -1,2 +1,3 @@
 # Life
-How many days you have left until you die?
+
+How many days do you have left until you die?
