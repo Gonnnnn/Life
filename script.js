@@ -122,6 +122,9 @@ document.getElementById("lifeForm").addEventListener("submit", function (e) {
   localStorage.setItem("dob", dob);
   localStorage.setItem("deathAge", deathAge);
 
+  document.getElementById("postSubmitContent").style.display = "block"; // Show the post-submit content
+  document.getElementById("lifeForm").style.display = "none"; // Hide the form
+  document.getElementById("enterAgainButton").style.display = "block"; // Show the Enter Again button
   displayRectangles(dob, deathAge);
 });
 
@@ -135,6 +138,11 @@ window.onload = function () {
 
     const now = new Date();
     const dob = new Date(savedDOB);
+
+    // initialize a new variable that has yyyy-MM-dd format from dob
+    const dobString = dob.toISOString().split("T")[0];
+    document.getElementById("dateOfBirth").value = dobString;
+    document.getElementById("deathAge").value = savedDeathAge;
 
     const lived = getExactTimeDifference(dob, now);
 
@@ -185,17 +193,24 @@ setInterval(updateLifeInfo, 1000);
 
 document
   .getElementById("enterAgainButton")
-  .addEventListener("click", function () {
+  .addEventListener("click", function (event) {
     document.getElementById("postSubmitContent").style.display = "none"; // Hide the post-submit content
 
     const savedDOB = localStorage.getItem("dob");
     const savedDeathAge = localStorage.getItem("deathAge");
 
+    const dob = new Date(savedDOB);
+
+    // initialize a new variable that has yyyy-MM-dd format from dob
+    const dobString = dob.toISOString().split("T")[0];
     // Pre-fill the form with saved data
-    document.getElementById("dateOfBirth").value = savedDOB;
+    document.getElementById("dateOfBirth").value = dobString;
     document.getElementById("deathAge").value = savedDeathAge;
 
     document.getElementById("lifeForm").style.display = "block"; // Show the form again
+
+    // hide the enter again button
+    event.target.style.display = "none";
   });
 
 /**

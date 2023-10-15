@@ -51,12 +51,17 @@ input {
 }
 
 button {
+  font-family: "Playfair Display", serif;
   background-color: #2a2a2a; /* Slightly different dark color for button */
   color: #ffffff; /* White text color */
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+
+  bottom: -35px; /* Adjust to set the gap between the container and the button */
+  right: 20px; /* Set the button to the bottom right corner of the container */
+  color: rgb(125, 120, 120);
 }
 
 button:hover {
@@ -105,14 +110,7 @@ button:hover {
   background-color: #1f242b;
 }
 
-#enterAgainButton,
-#soundButton {
-  font-family: "Playfair Display", serif;
-  bottom: -35px; /* Adjust to set the gap between the container and the button */
-  right: 20px; /* Set the button to the bottom right corner of the container */
-  color: rgb(125, 120, 120);
-  background-color: #121312;
-  cursor: pointer;
+button {
 }
 
 #footer {
