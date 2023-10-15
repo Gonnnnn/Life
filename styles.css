@@ -1,0 +1,137 @@
+body {
+  font-family: "Playfair Display", serif;
+  background-color: #000; /* Change background to black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #ffffff; /* Make text white for visibility against black */
+}
+
+.container {
+  /* remove fixed width */
+  background-color: rgba(255, 255, 255, 0.025);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+  display: inline-flex; /* make it wrap around its content */
+  flex-direction: column; /* stack children vertically */
+  align-items: center; /* center children horizontally */
+}
+
+#postSubmitContent {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+  height: 100%; /* Take full height */
+}
+
+#postSubmitContent #question {
+  /* font size 20 and place it in the middle */
+  font-size: 32px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  background-color: #1a1a1a; /* Darker background color */
+  color: #ffffff; /* White text color */
+  border: 1px solid #333333; /* Darker border color */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #2a2a2a; /* Slightly different dark color for button */
+  color: #ffffff; /* White text color */
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3a3a3a; /* Slightly lighter on hover */
+}
+
+.rectangle-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: relative; /* for year marker positioning */
+}
+
+.year-marker {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7em;
+  color: #ffffff;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.rectangle-container {
+  display: flex;
+  gap: 2px;
+  justify-content: center; /* Center the rectangles on the screen */
+}
+
+.rectangle {
+  width: 10px;
+  height: 10px;
+  border-radius: 1.5px;
+}
+
+.past {
+  background-color: #31c752;
+}
+
+.present {
+  background-color: #9ceaa9;
+}
+
+.future {
+  background-color: #1f242b;
+}
+
+#enterAgainButton,
+#soundButton {
+  font-family: "Playfair Display", serif;
+  bottom: -35px; /* Adjust to set the gap between the container and the button */
+  right: 20px; /* Set the button to the bottom right corner of the container */
+  color: rgb(125, 120, 120);
+  background-color: #121312;
+  cursor: pointer;
+}
+
+#footer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Aligns child items to the right */
+}
+
+/* snow */
+canvas#snowCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+#backgroundSound {
+  display: none;
+}
